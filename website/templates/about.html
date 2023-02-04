@@ -21,14 +21,16 @@
         body{
             background-color:bisque ;
             background-image: url("https://i.pinimg.com/474x/dd/b3/1d/ddb31d64430c6c74995e475d97891bbf.jpg");
-            background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
         }
         *{
             box-sizing: border-box;
         }
         img{
             vertical-align: middle;
-         
         }
         .container{
             position: relative;
@@ -181,6 +183,10 @@
                 font-family: "Times New Roman", Times, serif;
                 color: #f2f2f2;
               }
+              .box{
+                background-color: #f2f2f2;
+                opacity: 0.5;
+              }
         
     </style>
     <h1 id="title">ABOUT</h1>
@@ -238,6 +244,8 @@
           setTimeout(showSlides, 4000); // Change image every 2 seconds
         }
         </script>
+        <div class ="wrapper">
+          <div class="box">
         <h2 id="lesson">Short History lesson</h2>
         <br>
         <p>hjdbcdnjfkjgjxgdjkru,nhgjdkxfidey
@@ -247,6 +255,8 @@
             frgjyrgesryugiruyghogrehruhreiughrenvmerrv
             hrbsnerhefughrgreoogesrgrehoruegrugreiogrogrgrerehi
         </p>
+      </div>
+    </div>
         <h2 id="subtitle">WHY WE LOVE BEING WOMEN IN STEM</h2>
         <br>
 

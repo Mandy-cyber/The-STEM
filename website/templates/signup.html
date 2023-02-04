@@ -1,42 +1,136 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang = "en">
-<head>
-<title> Home </title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Life+Savers:wght@700&family=Roboto&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Life+Savers:wght@700&family=Roboto&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-</head>
-<style>
-    
-    body{
-        background-color:bisque ;
-        background-image: url("https://i.pinimg.com/474x/dd/b3/1d/ddb31d64430c6c74995e475d97891bbf.jpg");
-        background-attachment: fixed;
-    }
-    #title{
-        text-align: center;
-        color: #d5ff80;
-        font-size: 600%;
-        opacity:1;
-        letter-spacing: 4px;
-        text-shadow: 4px 4px black;
-        font-family: 'Dancing Script', cursive;
-        font-family: 'Life Savers', cursive;
+    <head>
+        <title> Home </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Life+Savers:wght@700&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Life+Savers:wght@700&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        />
+    </head>
 
-     
-  
-    }
-</style>
-<h1 id="title"> JOIN</h1>
-<br>
-<br>
-<body>
+    <body>
+        <style>
+            body{
+                background-image: url("https://i.pinimg.com/474x/dd/b3/1d/ddb31d64430c6c74995e475d97891bbf.jpg");
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                /* background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-size: cover; */
+            }
+            #title{
+                text-align: center;
+                color: #d5ff80;
+                font-size: 600%;
+                opacity:1;
+                letter-spacing: 4px;
+                text-shadow: 4px 4px black;
+                font-family: 'Dancing Script', cursive;
+                font-family: 'Life Savers', cursive;
+            }
+
+            #signup-div {
+                width: 23%;
+                align-items: center;
+                background-color: white;
+                display: grid;
+                justify-content: center;
+                border-radius: 0.5rem;
+                position: relative;
+                left: 38.5%;
+            }
+
+            .form-control {
+                width: 100%;
+                padding: auto;
+                background-color: #7496df;
+            }
+
+            /* ::-webkit-input-placeholder {
+                color: white;
+            } */
+        </style>
+
+        <!-- no touchy touchy down here miss -->
+        <h1 id="title">JOIN</h1>
+        <form method="POST">
+            <div class="form-group" id="signup-div">
+                <br>
+                <label for="fullName">Full Name</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="fullName" 
+                    name="fullName" 
+                />
+                
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="username" 
+                    name="username" 
+                />
+                
+                <label for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    class="form-control" 
+                    id="email" 
+                    name="email" 
+                />
+                
+                <label for="password1">Password</label>
+                <input 
+                    type="password" 
+                    class="form-control" 
+                    id="password1" 
+                    name="password1" 
+                />
+                
+                <label for="password2">Confirm Password</label>
+                <input 
+                    type="password" 
+                    class="form-control" 
+                    id="password2" 
+                    name="password2" 
+                />  
+                <br>
+
+                <p><i>Already have an account? <a href="/login">Login</a></i></p>
+                <br>
+            </div>
+            <button id="signup-button" 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    style="background-color: #eaff82; 
+                            color: black; 
+                            position:relative;
+                            left: 44%;
+                            width: 11vw;
+                            font-family: 'Quicksand', sans-serif;
+                            font-weight: bold;">
+                SIGNUP
+            </button>
+        </form>
 </body>
 </html>
