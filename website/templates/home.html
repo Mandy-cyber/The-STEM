@@ -1,160 +1,10 @@
-<!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html lang = "en">
-<head>
-<title> Home </title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Life+Savers:wght@700&family=Roboto&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Life+Savers:wght@700&family=Roboto&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-</head>
+{% extends "base.html" %}
+{% block title %} Home {% endblock %} 
 
-<!-- TODO Paula & Amanda send Sarah headshots + bios -->
-<style>
-    
-    body{
-        background-color:bisque ;
-        background-image: url("https://i.pinimg.com/474x/dd/b3/1d/ddb31d64430c6c74995e475d97891bbf.jpg");
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
-    #title{
-        text-align: center;
-        color: #d5ff80;
-        font-size: 600%;
-        opacity:1;
-        letter-spacing: 4px;
-        text-shadow: 4px 4px black;
-        font-family: 'Dancing Script', cursive;
-        font-family: 'Life Savers', cursive;
+{% block content %} 
 
-     
-  
-    }
- 
-
-    .page_links_left{
-
-    background-color:#d5ff80;
-    color: black;
-    text-align: center;
-    border-radius: 12px;
-    letter-spacing: 2px;
-    font-family: 'Quicksand', sans-serif;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 25px;
-    padding-right: 25px;
-    text-decoration: none;
-    position: relative;
-    float: left;
-    clear: left;
-
-
-    }
-    .page_links_right{
-
-        background-color:#d5ff80;
-        color: black;
-        text-align: center;
-        border-radius: 12px;
-        letter-spacing: 2px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 25px;
-        padding-right: 25px;
-        font-family: 'Quicksand', sans-serif;
-        position:relative;
-        float: right;
-        clear: right;
-        }
-    .clearfix {
-        overflow: auto;
-    }
-    #about{
-        padding-left: 60px;
-        padding-right: 60px;
-    }
-    #join{
-        padding-left: 70px;
-        padding-right: 70px;
-    }
-
-    #chooseyourpath {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    #contactus{
-        padding-left: 60px;
-        padding-right: 60px;
-    }
-
-/* Popup container */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-#popupbutton{
-    background-color:#d5ff80;
-    color: black;
-    text-align: center;
-    border-radius: 12px;
-    letter-spacing: 2px;
-    font-family: 'Quicksand', sans-serif;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-decoration: none;
-    position: absolute;
-    float: left;
-    clear: left;
-}
-
-.popup .popuptext {
-  visibility: hidden;
-  width: 600px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  padding-bottom: 50px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-}
-
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
-}
-
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-</style>
-
-<h1 id="title"> The <br> STEM</h1>
+<br>
+<h1 class="title"> The <br> STEM</h1>
 <br>
 <br>
 
@@ -167,16 +17,70 @@
 <br>
 <br>
 <br>
-<div class="popup" id="popupbutton" onclick="popupFunct()">MAILING LIST
-<script>
- function popupFunct() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-}
-</script>
-<span class="popuptext" id="myPopup">Insert Mailing List Here</span>
+<!-- Trigger/Open The Modal -->
+<button class ="page_links_left" id="myBtn">MAILING LIST</button>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;
+        <div class="container"> 
+                <div class="row">
+                    <div class="column">
+            <div style="text-align:center">
+            <form>
+                <!-- First Name -->
+                <label for="name" id="h3">First Name</label>
+                <br>
+                <input type="text" id="name" name="name" placeholder="First Name...">
+                <br>
+                <br>
+                <!-- Last Name  -->
+                <label for="name" id="h3">Last Name</label>
+                <br>
+                <input type="text" id="name" name="name" placeholder="Last Name...">
+                <br>
+                <br>
+                <!-- Email Address -->
+                <label for="emadd" id="h3">Email Address</label>
+                <br>
+                <input type="text" id="emadd" name="emailaddress" placeholder="Email Address...">
+                <br>
+                <input type="submit">
+            </form>
+            </div>
+            </div>
+                </div>
+            </div>
+            </div>
+    </span>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        window.onclick = function(event) {
+            // Note: If you click on a field in the form
+            // and you prematurely press enter, the form
+            // will not show :(
+            if (event.target == span) {
+                modal.style.display = "none";
+            }
+            else if (event.target == btn) {
+                modal.style.display = "block";
+            }
+            else if (event.target == modal) {
+                modal.style.display = "block";
+            }
+        }
+    </script>
+  </div>
 </div>
-<div>
+</div>
 <button class = "page_links_right" id="resources">RESOURCES <br>AND<br> OPPORTUNITIES</button>
 <br>
 <br>
@@ -186,8 +90,5 @@
 <br>
 <button class="page_links_left" id="join"> JOIN </button>
 <button class= "page_links_right" id="contactus">CONTACT US</button>
-</div>
-</section>
-</body>
 
-</html>
+{% endblock %}

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='stem.png')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Life+Savers:wght@700&family=Roboto&display=swap" rel="stylesheet">
@@ -28,7 +29,38 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
     <title>{% block title %} Title {% endblock %}</title>
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename='logo.png')}}" height="40" alt="The STEM logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto pr-5">
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="/">Home</a>
+            <a class="nav-item nav-link" href="/about">About</a>
+            <a class="nav-item nav-link" href="/your-path">Choose Your Path</a>
+            <a class="nav-item nav-link" href="/resources">Resources</a>
+            <a class="nav-item nav-link" href="/contact">Contact</a>
+            <!-- TODO change link for profile -->
+            <a class="nav-item nav-link" href="#">Profile</a>
+            {% else %}
+            <a class="nav-item nav-link" href="/">Home</a>
+            <a class="nav-item nav-link" href="/about">About</a>
+            <a class="nav-item nav-link" href="/your-path">Choose Your Path</a>
+            <a class="nav-item nav-link" href="/resources">Resources</a>
+            <a class="nav-item nav-link" href="/contact">Contact</a>
+            <a class="nav-item nav-link" href="/login">Login</a>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+
+
     {% with messages = get_flashed_messages(with_categories=true)%}
     {% if messages %}
         {% for category, message in messages %}

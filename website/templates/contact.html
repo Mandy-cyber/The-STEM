@@ -1,140 +1,48 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Life+Savers:wght@700&family=Roboto&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <body>
-        <style>
-            body {
-            background-color: bisque;
-            background-image: url("https://i.pinimg.com/474x/dd/b3/1d/ddb31d64430c6c74995e475d97891bbf.jpg");
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            }
+{% extends "base.html" %}
+{% block title %} Contact Us{% endblock %} 
 
-            * {
-                box-sizing: border-box;
-            }
+{% block content %}
+<br>
+<h1 id="contact-title" class="title">Get in<br>Touch!</h1>
+<h3 id="contact-subtitle">Don't be shy</h3>
+<form method="POST">
+    <div id="contact-div" class="form-group">
+        <br>
+        <label for="name">Name</label>
+        <input 
+            type="text"
+            class="form-control"
+            style="background-color: white;"
+            id="name"
+            name="name"
+            required />
+        
+        <label for="email">Email Address</label>
+        <input 
+            type="email"
+            class="form-control"
+            style="background-color: white;"
+            id="email"
+            name="email"
+            required />
 
-            #title{
-                text-align: center;
-                color: #d5ff80;
-                font-size: 500%;
-                opacity: 1;
-                letter-spacing: 4px;
-                text-shadow: 4px 4px black;
-                font-family: 'Dancing Script', cursive;
-                font-family: 'Life Savers', cursive;
-            }
-
-            #h2 {
-                text-align: center;
-                color: black;
-                font-size: 200%;
-                opacity: 1;
-                letter-spacing: .1px;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-            }
-
-            #h3 {
-                text-align: left;
-                color: black;
-                font-size: 100%;
-                opacity: 1;
-                letter-spacing: .1px;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-            }
-            
-            input{
-                background-color: white;
-                color:black;
-                margin: 8px 0;
-                box-sizing: border-box;
-                border: 2px black;
-                border-radius: 4px;
-                font-family: 'Dancing Script', cursive;
-                font-size:large;
-            }
-            input[type=text], select, textarea {
-                width: 50%;
-                background-color: #7496df;
-                border: 1px solid #7496df;
-                margin-top: 6px;
-                margin-bottom: 16px;
-                resize: vertical;
-                font-family: 'Dancing Script', cursive;
-                font-size:large;
-                
-            }
-            input[type=submit] {
-                background-color: #ecff7c;
-                color: black;
-                border: none;
-                cursor: pointer;
-                justify-content: center;
-                font-family: 'Dancing Script', cursive;
-                font-size:large;
-            }
-            input[type=submit]:hover {
-                background-color: #ecff7c;
-                color: forestgreen;
-                border: none;
-                cursor: pointer;
-                justify-content: center;
-                font-family: 'Dancing Script', cursive;
-                font-size:large;
-            }
-
-            #signup-div {
-                align-items: center;
-                background-color: white;
-                justify-content: center;
-                position: relative;
-            }
-            .container {
-                border-radius: 5px;
-                background-color: white;
-            }
-
-            .row:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-
-        </style>
-        <div class="container">
-            <div style = "text-align:center">
-            <h1 id="title">Get in Touch!</h1>
-            <h2 id="h2">Don't be shy</h2>
-        </div>
-    <div class="row">
-        <div class="column">
-            <div style = "text-align:center">
-            <form>
-                <!-- Name -->
-                <label for="name" id="h3">Name</label>
-                <br>
-                <input type="text" id="name" name="name" placeholder="Name...">
-                <br>
-                <br>
-                <!-- Email Address -->
-                <label for="emadd" id="h3">Email Address</label>
-                <br>
-                <input type="text" id="emadd" name="emailaddress" placeholder="Email Address...">
-                <br>
-                <br>
-                <!-- Message -->
-                <label for="message" id="h3">Message</label>
-                <br>
-                <textarea id="message" name="message" placeholder="Message..." style="height:150px"></textarea>
-                <br>
-                <input type="submit">
-            </form>
-        </div>
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="40" rows="7" class="form-control" style="background-color: white;"></textarea>
+        <br>
     </div>
-        </body>
-    </head>
-</html>
+    <br>
+    
+    <button type="submit"
+            class="btn btn-primary" 
+            style="background-color: #eaff82; 
+                    color: black; 
+                    position:relative;
+                    left: 55%;
+                    width: 11rem;
+                    top: -17rem;
+                    font-family: 'Quicksand', sans-serif;
+                    font-weight: bold;">
+        SEND
+    </button>
+</form>
+{% endblock %} 
