@@ -1,227 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <html lang = "en">
-    <head>
-    <title> Home </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Life+Savers:wght@700&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Life+Savers:wght@700&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-    </head>
-    <title> About page</title>
+{% extends "base.html" %}
+{% block title %} About  {% endblock %} 
+
+{% block content %} 
+{% endblock %} 
     <style>
     
-        body{
-            background-color:bisque ;
-            background-image: url("https://i.pinimg.com/474x/dd/b3/1d/ddb31d64430c6c74995e475d97891bbf.jpg");
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
-        *{
-            box-sizing: border-box;
-        }
-        img{
-            vertical-align: middle;
-        }
-        .container{
-            position: relative;
- 
-
-        }
-        .slideshow{
-            display: none;
-
-        }
-        .slidepics{
-            width:30%;
-            height:20%;
-
-        }
-        .cursor{
-            cursor: pointer;
-        }
-        .democursor{
-            height:100px;
-        }
-
-        .numbertext{
-            color:#f2f2f2;
-            text-shadow:1px 1px #222;
-            font-size: 12px;
-            padding: 8px 12px;
-            position: absolute;
-            top: 0;
-        }
-        .caption-container{
-            text-align: center;
-            background-color: #222;
-            padding: 8px 16px;
-            color: white;
-        }
-        .row:after{
-            content:"";
-            display:table;
-            clear:both;
-    
-        }
-        .column{
-            float:left;
-            width: 16.66%;
-            height:max-content;
-
-
-        }
-        .demo{
-            opacity:0.6;
-    
-        }
-     
-        .active,.demo:hover{
-            opacity:1;
-        }
- 
-        #title{
-            text-align: center;
-            color: #d5ff80;
-            font-size: 600%;
-            opacity:1;
-            letter-spacing: 4px;
-            text-shadow: 4px 4px black;
-            font-family: 'Dancing Script', cursive;
-            font-family: 'Life Savers', cursive;  
-        }
-        #caption{
-            text-align: left;
-            color:whitesmoke;
-            text-shadow: 2px 2px black;
-            padding: 10px;
-            background: black;
-            background-size: 20%;
-            background-position: 0px;
-        }
-
-        #subtitle{
-            text-align: center;
-            color: #d5ff80;
-            font-size: 200%;
-            opacity:1;
-        
-            text-shadow: 4px 4px black;
-            font-family: 'Dancing Script', cursive;
-            font-family: 'Life Savers', cursive;  
-        }
-            html {
-                box-sizing: border-box;
-              }
-              
-              *, *:before, *:after {
-                box-sizing: inherit;
-              }
-              
-              .column {
-                float: left;
-                width: 33.3%;
-                margin-bottom: 16px;
-                padding: 0 8px;
-              }
-              
-              @media screen and (max-width: 650px) {
-                .column {
-                  width: 100%;
-                  display: block;
-                }
-              }
-              
-              .card {
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-              }
-              
-              .container_2 {
-                padding: 0 16px;
-              }
-              
-              .container_2::after, .row::after {
-                content: "";
-                clear: both;
-                display: table;
-              }
-              
-              .school {
-                color:black;
-              }
-              .profilepic{
-                border-radius: 50%;
-              }
-              #notsubtitle{
-                text-align: left;
-                font-family: 'Dancing Script', cursive;
-                font-family: 'Life Savers', cursive; 
-                color: whitesmoke;
-                text-shadow: 2px 2px black;
-              }
-              h3{
-                color: antiquewhite;
-                font-family: 'Dancing Script', cursive;
-                text-shadow: 2px 2px black;
-
-              }
-              .school{
-                color: azure;
-                font-weight: bold;
-              }
-              #lesson{
-                text-align: center;
-                font-family: "Times New Roman", Times, serif;
-                color: #f2f2f2;
-              }
-              .box{
-                background-color: #f2f2f2;
-                opacity: 0.5;
-              }
         
     </style>
-    <h1 id="title">ABOUT</h1>
+    <h1 class="title">ABOUT</h1>
 </head>
+
 <body>
     <h2 id="notsubtitle">Women in Stem Gallery</h2>
     <div class ="container">
         <div class="slideshow">
             <div class="numbertext">1/6</div>
-            <img class="slidepics"src="https://wicenterfornursing.org/wp-content/uploads/2021/02/mahoney-group.jpg">
+            <img class="slidepics" src="{{ url_for('static', filename = 'mahoney.jpg')}}">
             <p id="caption">Mary Elizabeth Mahoney </p>
         </div>
         <div class="slideshow">
             <div class="numbertext">2/6</div>
-            <img class="slidepics"src="https://techcrunch.com/wp-content/uploads/2016/11/gettyimages-673669337.jpg">
+            <img class="slidepics" src="{{url_for('static', filename='hopper.jpg')}}">
             <p id="caption">Mary Hopper</p>
         </div>
         <div class="slideshow">
             <div class="numbertext">3/6</div>
-            <img class="slidepics"src="https://www.nsf.gov/news/special_reports/medalofscience50/images/wu_1.jpg">
+            <img class="slidepics" src="{{url_for('static', filename ='wu.jpg')}}">
             <p id="caption"> Chien-Shiung Wu</p>
         </div>
         <div class="slideshow">
             <div class="numbertext">4/6</div>
-            <img class="slidepics" src="https://cdn.mos.cms.futurecdn.net/hk2QfJCsYUxDW9cEihGLMo.jpg" >
+            <img class="slidepics" src="{{url_for('static', filename='jamison.jpg')}}" >
             <p id="caption"> Mae Jemison</p>
         </div>
         <div class="slideshow">
             <div class="numbertext">5/6</div>
-            <img class="slidepics" src="data:image/jpeg;base64,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" >
+            <img class="slidepics" src="{{url_for('static',filename='ross.jpg')}}" >
             <p id="caption"> Mary Golda Ross</p>
         </div>
         <div class="slideshow">
             <div class="numbertext">6/6</div>
-            <img class="slidepics"src="https://cdn.cnn.com/cnnnext/dam/assets/201216151232-katalin-karik-super-tease.jpg">
+            <img class="slidepics"src="{{url_for('static', filename='karik.jpg')}}">
             <p id="caption"> Katalin Kariko</p>
     </div>
   
@@ -241,12 +60,13 @@
           if (slideIndex > slides.length) {slideIndex = 1}    
           
           slides[slideIndex-1].style.display = "block";  
-          setTimeout(showSlides, 4000); // Change image every 2 seconds
+          setTimeout(showSlides, 4000); // Change image every 4 seconds
         }
         </script>
+
         <div class ="wrapper">
           <div class="box">
-        <h2 id="lesson">Short History lesson</h2>
+
         <br>
         <p>hjdbcdnjfkjgjxgdjkru,nhgjdkxfidey
             hdfjbcdmnjghktbhnfjdvbhktugjkhkvmty
