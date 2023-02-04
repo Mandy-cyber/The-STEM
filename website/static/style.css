@@ -1,0 +1,71 @@
+/* STYLING FOR ALL PAGES */
+/* --------------------------------------------------------------- */
+body{
+    background-color:bisque ;
+    background-image: url("https://i.pinimg.com/474x/dd/b3/1d/ddb31d64430c6c74995e475d97891bbf.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#title{
+    text-align: center;
+    color: #d5ff80;
+    font-size: 600%;
+    opacity:1;
+    letter-spacing: 4px;
+    text-shadow: 4px 4px black;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Life Savers', cursive;
+}
+
+/* STYLING FOR LOGIN PAGE */
+/* --------------------------------------------------------------- */
+#login-div {
+    width: 23%;
+    align-items: center;
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    border-radius: 0.5rem;
+    position: relative;
+    left: 38.5%;
+    margin-top: 80px;
+}
+
+.form-control {
+    width: 100%;
+    padding: auto;
+    background-color: #7496df;
+}
+
+
+/* STYLING FOR SIGNUP PAGE */
+/* --------------------------------------------------------------- */
+
+
+
+
+/* STYLING FOR HOME PAGE */
+/* --------------------------------------------------------------- */
+
+
+
+/* STYLING FOR ABOUT PAGE */
+/* --------------------------------------------------------------- */
+
+
+
+/* STYLING CONTACT PAGE */
+/* --------------------------------------------------------------- */
+
+
+
+
+/* STYLING FOR CHOOSE YOUR PATH PAGE */
+/* --------------------------------------------------------------- */
+
+
+
+/* STYLING FOR RESOURCES PAGE */
+/* --------------------------------------------------------------- */

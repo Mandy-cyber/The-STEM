@@ -30,27 +30,24 @@ def login():
     wrong_attempts = 0
     
     if request.method == 'POST':
-        while wrong_attempts < 4:
-            # get info from the form
-            username = request.form.get('username')
-            password = request.form.get('password')
-            # find the user
-            user = User.query.filter_by(username=username).first()
-            if user: #if user exists
-                if check_password_hash(user.password, password):
-                    flash('Logged in successfully', category='success')
-                    login_user(user, remember=True)
-                    #bring user to the home page
-                    # TODO make views.home
-                    return redirect(url_for('view.home'))
-                else:
-                    # purposefully don't specify which one, for security purposes
-                    flash('Incorrect username or password', category='error')
-                    wrong_attempts += 1
+        # get info from the form
+        username = request.form.get('username')
+        password = request.form.get('password')
+        # find the user
+        user = User.query.filter_by(username=username).first()
+        if user: #if user exists
+            if check_password_hash(user.password, password):
+                flash('Logged in successfully', category='success')
+                login_user(user, remember=True)
+                #bring user to the home page
+                # TODO make views.home
+                return redirect(url_for('view.home'))
             else:
-                flash("Incorrect username or password", category='error')
-                wrong_attempts += 1
-
+                # purposefully don't specify which one, for security purposes
+                flash('Incorrect username or password', category='error')
+        else:
+            flash("Incorrect username or password", category='error')
+            
     return render_template("login.html", user=current_user)
 
 
@@ -78,7 +75,7 @@ def logout():
 def sign_up():
     """ let's a user create an account
     * Requeries if:
-        - the fullname is too short
+        - the fullname does not have at least 2 words
         - the username is already taken
         - the email already exists or is invalid
         - the passwords do not match or the password
@@ -107,7 +104,9 @@ def sign_up():
         username_exists = User.query.filter_by(username=username).first()
         email_exists = User.query.filter_by(email=email).first()
 
-        if username_exists:
+        if len(list(fullName)) < 2:
+            flash('Please input your first and last name correctly.', category='error')
+        elif username_exists:
             flash('Sorry, this username is taken!', category='error')
         elif email_exists:
             flash('An account is already associated with this email.', category='error')

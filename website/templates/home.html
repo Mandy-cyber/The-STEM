@@ -67,9 +67,9 @@
         border-radius: 12px;
         letter-spacing: 2px;
         padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 25px;
-    padding-right: 25px;
+        padding-bottom: 5px;
+        padding-left: 25px;
+        padding-right: 25px;
         font-family: 'Quicksand', sans-serif;
         position:relative;
         float: right;
@@ -91,16 +91,69 @@
         padding-left: 30px;
         padding-right: 30px;
     }
-    #testimonials {
-        padding-left: 53px;
-        padding-right: 53px;
-    }
+
     #contactus{
         padding-left: 60px;
         padding-right: 60px;
     }
 
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#popupbutton{
+    background-color:#d5ff80;
+    color: black;
+    text-align: center;
+    border-radius: 12px;
+    letter-spacing: 2px;
+    font-family: 'Quicksand', sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+    position: absolute;
+    float: left;
+    clear: left;
+}
+
+.popup .popuptext {
+  visibility: hidden;
+  width: 600px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  padding-bottom: 50px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
 </style>
+
 <h1 id="title"> The <br> STEM</h1>
 <br>
 <br>
@@ -114,9 +167,17 @@
 <br>
 <br>
 <br>
-<div class ="clearfix">
-<button class = "page_links_left" id="resources">RESOURCES <br>AND<br> OPPORTUNITIES</button>
-<button class="page_links_right" id="testimonials" >TESTIMONIALS</button>
+<div class="popup" id="popupbutton" onclick="popupFunct()">MAILING LIST
+<script>
+ function popupFunct() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+</script>
+<span class="popuptext" id="myPopup">Insert Mailing List Here</span>
+</div>
+<div>
+<button class = "page_links_right" id="resources">RESOURCES <br>AND<br> OPPORTUNITIES</button>
 <br>
 <br>
 <br>
@@ -126,17 +187,7 @@
 <button class="page_links_left" id="join"> JOIN </button>
 <button class= "page_links_right" id="contactus">CONTACT US</button>
 </div>
-
 </section>
 </body>
-
-
-
-
-
-
-
-
-
 
 </html>

@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, render_template, flash, request, jsonify
 from flask_login import login_required, current_user
-from .models import Note
+from .models import User
 from . import db
 
 views = Blueprint('views', __name__) 
