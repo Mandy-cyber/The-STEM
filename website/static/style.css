@@ -81,6 +81,8 @@ body{
     left: 13%;
     top: 5.5rem;
     color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
 }
 
 
@@ -103,73 +105,91 @@ body{
     position: relative;
     float: left;
     clear: left;
-
-
-    }
-.page_links_right{
-        background-color:#d5ff80;
-        color: black;
-        text-align: center;
-        border-radius: 12px;
-        letter-spacing: 2px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 25px;
-        padding-right: 25px;
-        font-family: 'Quicksand', sans-serif;
-        position:relative;
-        float: right;
-        clear: right;
 }
-    .clearfix {
-        overflow: auto;
-    }
-    #about{
-        padding-left: 60px;
-        padding-right: 60px;
-    }
-    #join{
-        padding-left: 70px;
-        padding-right: 70px;
-    }
 
-    #chooseyourpath {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+.page_links_right{
+    background-color:#d5ff80;
+    color: black;
+    text-align: center;
+    border-radius: 12px;
+    letter-spacing: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-family: 'Quicksand', sans-serif;
+    position:relative;
+    float: right;
+    clear: right;
+}
 
-    #contactus{
-        padding-left: 60px;
-        padding-right: 60px;
-    }
+.clearfix {
+    overflow: auto;
+}
+
+#about{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+#join{
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+#chooseyourpath {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#contactus{
+    padding-left: 60px;
+    padding-right: 60px;
+}
 
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  left: 40%;
+  top: 20%;
+  width: 25%;
+  overflow: auto; 
+  justify-content: center;
+  border-radius: 0.75rem;
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto;
-  padding: 20px;
-  border-radius: 50px;
-  width: 50%;
-  height: 50%;
+
+#mailing-form-div {
+    width: 200%;
+    align-items: center;
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    border-radius: 0.5rem;
+    position: relative;
+    left: -30%;
+    font-size: 1vw;
+}
+
+#mailing-h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    position: relative;
+    left: 26.5%;
+}
+
+#mailing-p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1vw;
 }
 
 /* The Close Button */
 .close {
   color: #080808;
-  font-size: 28px;
   font-weight: bold;
+  padding: 1vw;
 }
 
 .close:hover,
@@ -195,6 +215,7 @@ img{
 }
 .slideshow{
     display: none;
+    float: left;
 
 }
 .slidepics{
@@ -263,8 +284,8 @@ img{
     background: black;
     background-size: 20%;
     background-position: 0px;
-    float:left;
 }
+
 
 #subtitle{
     text-align: center;
@@ -335,16 +356,25 @@ img{
         color: azure;
         font-weight: bold;
       }
-      #lesson{
+      #HistoryLesson{
         text-align: center;
         font-family: "Times New Roman", Times, serif;
         color: #f2f2f2;
       }
       .box{
         background-color: #f2f2f2;
-        opacity: 0.5;
+        opacity: 0.7;
         float:right;
       }
+      .wrapper, #histrypr{
+        loat:right;
+        text-align:righ
+      }
+      .captionbox{
+        float:right;
+        text-align:right;
+      }
+
 
 
 
@@ -354,4 +384,138 @@ img{
 
 
 /* STYLING FOR RESOURCES PAGE */
-/* --------------------------------------------------------------- */
+/* --------------------------------------------------------------- */#subtitle{
+    text-align: left;
+    color:#d5ff80;
+    font-size:300%;
+    opacity: 1;
+    text-shadow: 2px 2px black;
+    font-family: 'Life Savers', cursive;;
+    font-weight: bold;
+
+}
+.arrow{
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+.category1{
+    float: left;
+    overflow:hidden;
+
+}
+.category1,.categories1{
+    cursor:pointer;
+    font-size: 35px;
+    border:none;
+    color:white;
+    padding: 14px, 16px;
+    background-color: inherit;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    align-self: left;
+}
+
+
+.category1:hover, .categories1, .categories1:focus{
+    background-color: blue;
+}
+.educational-categories {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width:160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+}
+.educational-categories a{
+    float:none;
+    color:black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display:block;
+    text-align: left;
+
+}
+.educational-categories a:hover{
+    background-color: #ddd;
+}
+.show{
+    display:block;
+}
+.category2{
+    float: left;
+    overflow:hidden;
+}
+.category2, .categories2{
+    cursor:pointer;
+    font-size: 35px;
+    border:none;
+    color:white;
+    padding: 14px, 16px;
+    background-color: inherit;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    align-self: left;
+}
+.category2:hover, .categories2, .categories2:focus{
+    background-color: blue;
+}
+.opportunity-categories {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width:160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+}
+.opportunity-categories a{
+    float:none;
+    color:black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display:block;
+    text-align: left;
+
+}
+.show2{
+    display:block;
+}
+.opportunity-categories a:hover{
+    background-color: #ddd;
+}
+.filter{
+    float: left;
+    overflow:hidden;
+}
+.filter, .stem-filter{
+    cursor:pointer;
+    font-size: 16px;
+    border:none;
+    color:white;
+    padding: 14px, 16px;
+    background-color: inherit;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    align-self: left;
+}
+.stem-categories a{
+    float:none;
+    color:black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display:block;
+    text-align: left;
+}
+.stem-categories a:hover{
+    background-color: #ddd;
+
+}\

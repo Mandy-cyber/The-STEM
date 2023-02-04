@@ -4,90 +4,85 @@
 {% block content %} 
 
 <br>
-<h1 class="title"> The <br> STEM</h1>
-<br>
-<br>
+<h1 class="title">The <br> STEM</h1>
+<br><br>
 
-<section>
-<body>
- 
 <button class = "page_links_left" id="about" onclick="document.location='about.html'"> ABOUT</a> </button>
 <button class = "page_links_right" id="chooseyourpath"> CHOOSE YOUR PATH</button>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br>
 <!-- Trigger/Open The Modal -->
 <button class ="page_links_left" id="myBtn">MAILING LIST</button>
 <!-- The Modal -->
 <div id="myModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;
-        <div class="container"> 
+        <span class="close">&times;
+            <div class="container"> 
                 <div class="row">
-                    <div class="column">
-            <div style="text-align:center">
-            <form>
-                <!-- First Name -->
-                <label for="name" id="h3">First Name</label>
-                <br>
-                <input type="text" id="name" name="name" placeholder="First Name...">
-                <br>
-                <br>
-                <!-- Last Name  -->
-                <label for="name" id="h3">Last Name</label>
-                <br>
-                <input type="text" id="name" name="name" placeholder="Last Name...">
-                <br>
-                <br>
-                <!-- Email Address -->
-                <label for="emadd" id="h3">Email Address</label>
-                <br>
-                <input type="text" id="emadd" name="emailaddress" placeholder="Email Address...">
-                <br>
-                <input type="submit">
-            </form>
-            </div>
-            </div>
+                    <h4 id="mailing-h4">Mailing List</h4>
+                    <!-- MAILING LIST FORM -->
+                    <form method="POST">
+                        <div id="mailing-form-div" class="form-group">
+                            <br>
+                            <label for="name">Name</label>
+                            <input 
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                name="name"
+                                required />
+                            <br>
+                            <label for="email">Email Address</label>
+                            <input 
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                name="email"
+                                required />
+
+                        </div>
+                        <button type="submit"
+                                class="btn btn-primary" 
+                                style="background-color: #eaff82; color: black; 
+                                        position:relative; left: 38.5%; width: 8rem;
+                                        font-family: 'Quicksand', sans-serif;
+                                        font-weight: bold;">
+                            JOIN NOW
+                        </button>
+                        <br>
+                    </form>
                 </div>
             </div>
-            </div>
-    </span>
-
-    <script>
-        var modal = document.getElementById("myModal");
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-        
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-        
-        window.onclick = function(event) {
-            // Note: If you click on a field in the form
-            // and you prematurely press enter, the form
-            // will not show :(
-            if (event.target == span) {
-                modal.style.display = "none";
-            }
-            else if (event.target == btn) {
-                modal.style.display = "block";
-            }
-            else if (event.target == modal) {
-                modal.style.display = "block";
-            }
+        </span>
+    </div>
+</div>
+    
+<script>
+    var modal = document.getElementById("myModal");
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    window.onclick = function(event) {
+        // Note: If you click on a field in the form
+        // and you prematurely press enter, the form
+        // will not show :(
+        if (event.target == span) {
+            modal.style.display = "none";
         }
-    </script>
-  </div>
-</div>
-</div>
+        else if (event.target == btn) {
+            modal.style.display = "block";
+        }
+        else if (event.target == modal) {
+            modal.style.display = "block";
+        }
+    }
+</script>
+
 <button class = "page_links_right" id="resources">RESOURCES <br>AND<br> OPPORTUNITIES</button>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br><br><br>
 <button class="page_links_left" id="join"> JOIN </button>
 <button class= "page_links_right" id="contactus">CONTACT US</button>
 

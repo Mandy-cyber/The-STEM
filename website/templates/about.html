@@ -2,16 +2,133 @@
 {% block title %} About  {% endblock %} 
 
 {% block content %} 
-{% endblock %} 
-    <style>
-    
-        
-    </style>
-    <h1 class="title">ABOUT</h1>
-</head>
 
 <body>
-    <h2 id="notsubtitle">Women in Stem Gallery</h2>
+  <h2 id="notsubtitle">Women in Stem Gallery</h2>
+  <div class ="container">
+      <div class="slideshow">
+          <div class="numbertext">1/6</div>
+          <img class="slidepics" src="{{ url_for('static', filename = 'mahoney.jpg')}}">
+          <br>
+          <div class="captionbox">
+          <p id="caption">Mary Elizabeth Mahoney </p>
+          </div>
+      </div>
+      <div class="slideshow">
+          <div class="numbertext">2/6</div>
+          <img class="slidepics" src="{{url_for('static', filename='hopper.jpg')}}">
+          <br>
+          <div class="captionbox">
+          <p id="caption">Mary Hopper</p>
+          </div>
+      </div>
+      <div class="slideshow">
+          <div class="numbertext">3/6</div>
+          <img class="slidepics" src="{{url_for('static', filename ='wu.jpg')}}">
+          <br>
+          <div class="captionbox">
+          <p id="caption"> Chien-Shiung Wu</p>
+          </div>
+      </div>
+      <div class="slideshow">
+          <div class="numbertext">4/6</div>
+          <img class="slidepics" src="{{url_for('static', filename='jamison.jpg')}}" >
+          <br>
+          <div class="captionbox">
+          <p id="caption"> Mae Jemison</p>
+          </div>
+      </div>
+      <div class="slideshow">
+          <div class="numbertext">5/6</div>
+          <img class="slidepics" src="{{url_for('static',filename='ross.jpg')}}" >
+          <br>
+          <div class="captionbox">
+          <p id="caption"> Mary Golda Ross</p>
+          </div>
+
+      </div>
+      <div class="slideshow">
+          <div class="numbertext">6/6</div>
+          <img class="slidepics"src="{{url_for('static', filename='karik.jpg')}}">
+          <br>
+          <div class="captionbox">
+          <p id="caption"> Katalin Kariko</p>
+          </div>
+  </div>
+
+
+
+  <script>
+      let slideIndex = 0;
+      showSlides();
+      
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slideshow");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+      }
+      </script>
+
+      <div class ="wrapper">
+        <div class="box">
+
+      <br>
+      <h2 id="HistoryLesson"> A SHORT HISTORY LESSON </h2> 
+      <p id="historypara"> hjdbcdnjfkjgjxgdjkru,nhgjdkxfidey
+          hdfjbcdmnjghktbhnfjdvbhktugjkhkvmty
+          jdfbcytngfurbfrnuyheiufrrhriughkjnvhmtirhnrounifrurenilfer
+          frjghcnirhfurhurluhrfuhfhuirehllrulehilureslhrehlrh
+          frgjyrgesryugiruyghogrehruhreiughrenvmerrv
+          hrbsnerhefughrgreoogesrgrehoruegrugreiogrogrgrerehi
+      </p>
+    </div>
+  </div>
+      <h2 id="subtitle">WHY WE LOVE BEING WOMEN IN STEM</h2>
+      <br>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img class="profilepic" src="A1C8A727-DA1F-4352-A21A-0A676688E740.JPG" alt="Amanda" style="width:100%">
+      <div class="container_2">
+        <h3>Amanda</h3>
+        <p class="school">North Eastern University</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img class="profilepic" src="A1C8A727-DA1F-4352-A21A-0A676688E740.JPG" alt="Paula" style="width:100%">
+      <div class="container_2">
+        <h3>Paula</h3>
+        <p class="school">North Eastern University</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img class="profilepic" src="A1C8A727-DA1F-4352-A21A-0A676688E740.JPG" alt="Sarah" style="width:100%">
+      <div class="container_2">
+        <h3>Sarah</h3>
+        <p class="school">Howard University</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<h2 id="notsubtitle">Women in Stem Gallery</h2>
     <div class ="container">
         <div class="slideshow">
             <div class="numbertext">1/6</div>
@@ -114,5 +231,5 @@
       </div>
     </div>
   </div>
-</body>
-</html>
+
+{% endblock %}

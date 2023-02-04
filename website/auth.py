@@ -1,6 +1,6 @@
 import re
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from .models import User, Messages
+from .models import User, Messages, MailingList
 from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
@@ -41,7 +41,7 @@ def login():
                 login_user(user, remember=True)
                 #bring user to the home page
                 # TODO make views.home
-                return redirect(url_for('view.home'))
+                return redirect(url_for('views.home'))
             else:
                 # purposefully don't specify which one, for security purposes
                 flash('Incorrect username or password', category='error')

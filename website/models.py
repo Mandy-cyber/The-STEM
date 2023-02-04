@@ -16,5 +16,11 @@ class User(db.Model, UserMixin):
 class Messages(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64))
-    email = db.Column(db.String(128), unique=True)
+    email = db.Column(db.String(128))
     message = db.Column(db.String(512))
+
+
+class MailingList(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    mailer_name = db.Column(db.String(64))
+    email = db.Column(db.String(128), unique=True)

@@ -1,7 +1,7 @@
 import re
 from flask import Blueprint, jsonify, render_template, flash, request, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from .models import User, Messages
+from .models import User, Messages, MailingList
 from . import db
 
 views = Blueprint('views', __name__) 
@@ -63,9 +63,9 @@ def contact():
             # adding the new message to the database
             new_message = Messages(name=name, email=email, message=message)
             db.session.add(new_message)
-            db.session.commmit()
+            db.session.commit()
             flash('A carrier pigeon is on its way now!', category='success')
-            return redirect(url_for('view.home')) #back to the home page
+            return redirect(url_for('views.home')) #back to the home page
 
     return render_template("contact.html", user=current_user)
 
