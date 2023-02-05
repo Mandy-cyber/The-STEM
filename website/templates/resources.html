@@ -3,33 +3,40 @@
 
 {% block content %}
 <br>
+<h1 class="title">Resources</h1>
+<br>
 <form method="POST">
-    <div id="filter-form" class="form-options">
-        <label for="STEM-filters">Choose a field of STEM</label>
+    <div id="resource-form-div" class="form-group">
+        <h4>Choose a field in STEM</h4>
+        <label for="science">
         <input 
             type="radio"
             class="form-control"
             id="science"
             name="Science">
-        <label for="science">Science</label>
+        Science</label>
+        <label for="technology" >
         <input 
             type="radio"
             class="form-control"
             id="technology"
             name="Technology">
-            <label for="technology">Technology</label>
+            Technology</label>
+        <label for="engineering">   
         <input 
             type="radio"
             class="form-control"
             id="engineering"
             name="Engineering">
-        <label for="engineering">Engineering</label>
+        Engineering</label>
+        <label for="math">
         <input 
             type="radio"
             class="form-control"
             id="math"
             name="Math">
-            <label for="math">Math</label>
+            Math
+        </label>
             <br>
         
         
@@ -39,14 +46,13 @@
                 <option value="Resume Building">Resume Building</option>
                 <option value="Homework Help">Homework Help</option>
             </select>
-            <input type="submit" name="resource-edu-submit" id="resource-edu-submit"/>
+            <br>
             <label for="opportunity-resource-category">Choose the Type of Opportunity-based Resource you want</label>
             <select name="oppcats" id="oppcats" class="form-control">
                 <option value="Internships">Internships</option>
                 <option value="Research Opportunities">Research Opportunities</option>
                 <option value="Entry Level Jobs">Entry Level Jobs</option>
             </select>
-            <input type="submit" name="resource-opp-submit" id="resource-opp-submit"/>
             
         <br>
     </div>
@@ -58,14 +64,14 @@
             style="background-color: #eaff82; 
                     color: black; 
                     position:relative;
-                    left: 44%;
+                    left: 10%;
                     width: 11vw;
                     font-family: 'Quicksand', sans-serif;
                     font-weight: bold;">
         Submit
     </button>
 </form>
-<h1 class="title">Resources</h1>
+
 
 <div id="resources-container">
     <div id="list-of-resources">

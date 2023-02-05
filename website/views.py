@@ -1,7 +1,8 @@
 import re
 import base64
-import io
+from io import BytesIO
 import urllib.request
+import requests
 from flask import Blueprint, jsonify, render_template, flash, request, jsonify, redirect, url_for
 from flask_login import login_required, current_user
 from PIL import Image
@@ -115,9 +116,26 @@ def profile():
                 db.session.commit()
                 img_links = find_similar_people(wildcard=wildcard, current_user=current_user)
                 ppl = SimilarPeople.query.filter_by(user_id=current_user.id).all()
+
+                # IMAGE LOADING, SAVING, & ENCRYPTION/DECRYPTION
+                #-------------------------------------------------#
+                ## Will fix this in the future!
+                # images = []
+                # for person in ppl:
+                #     lnk = person.lnk
+                #     response = requests.get(lnk)
+                #     # urllib.request.urlretrieve(lnk)
+                #     im = Image.open(BytesIO(response.content))
+                #     # data = BytesIO()
+                #     # im.save(im, "JPEG") # save img in-memory
+                #     encoded_img_data = base64.b64encode(im.getvalue()) # encode the img
+                #     images.append(encoded_img_data.decode('utf-8'))
+
                 links = []
                 for person in ppl:
-                    links.append(person.lnk)
+                    lnk = person.lnk
+                    links.append(lnk)
+
                 return render_template("profile.html", user=current_user, links=links)
         else:
             if edulevel == None:
@@ -129,10 +147,29 @@ def profile():
                 return redirect(url_for('views.resources'))
             
     ppl = SimilarPeople.query.filter_by(user_id=current_user.id).all()
-    links = []
     for person in ppl:
         lnk = person.lnk
 
+    # IMAGE LOADING, SAVING, & ENCRYPTION/DECRYPTION
+    # images = []
+    links = []
+    for person in ppl:
+        lnk = person.lnk
+        links.append(lnk)
+
+    # IMAGE LOADING, SAVING, & ENCRYPTION/DECRYPTION
+    #-------------------------------------------------#
+    ## Will fix this in the future!
+    # images = []
+    # for person in ppl:
+    #     lnk = person.lnk
+    #     response = requests.get(lnk)
+    #     # urllib.request.urlretrieve(lnk)
+    #     im = Image.open(BytesIO(response.content))
+    #     # data = BytesIO()
+    #     # im.save(im, "JPEG") # save img in-memory
+    #     encoded_img_data = base64.b64encode(im.getvalue()) # encode the img
+    #     images.append(encoded_img_data.decode('utf-8'))
 
     # user_info = User.query.filter_by(id=current_user.id).first()
     # print(user_info.eduLevel)

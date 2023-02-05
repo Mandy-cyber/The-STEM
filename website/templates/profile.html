@@ -50,7 +50,7 @@
             <br>
             <h5 class="card-title" style="padding-left: 1rem; padding-right: 1rem;">What's <b>one</b> word to describe your identity?</h5>
             {% if user.wildFactor is not none and user.wildFactor|length %}
-            <h2 style="font-family: 'Dancing Script', cursive; font-size: 5vw; padding-left: 5rem;">{{ user.wildFactor }}</h2> 
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 5vw; padding-left: 2rem; color: white;">{{ user.wildFactor }}</h2> 
             <br>
             {% else %}
             <p class="card-text"></p>
@@ -80,19 +80,26 @@
 
         <!-- SLIDESHOW OF SIMILAR PEOPLE -->
         <div id="wildcard-slideshow" class="card text-white bg-info mb-3" style="max-width: 18rem;">
-            <div class="card-header"><b>Inspiration</b></div>
+            {% if user.wildFactor is not none and user.wildFactor|length %}
+            <div class="card-header"><b>{{ user.wildFactor }} Women in STEM</b></div>
             <div class="card-body">
-                <h5 class="card-title">Shared Identity</h5>
-                <p class="card-text">Other women in STEM who share your same identity:</p>
+                <h5 class="card-title">Inspiration</h5>
+                <p class="card-text">Other women in STEM who share your same identity: <br><br><b>Feature coming soon!</b></p>
                 <div class="container">
                     {% for link in links %}
                         <div class="slideshow">
-                            <img class="slidepics" src="{{}}"/>
-                            <!-- https://www.zocalopublicsquare.org/wp-content/uploads/2021/08/lgbtq-stem-science-discrimination-sexual-orientation.jpg -->
+                            <!-- <img class="slidepics" src="data:image/{{ image }}"/> -->
                         </div>
                     {% endfor %}
                 </div>
             </div>
+            {% else %}
+            <div class="card-header"><b>Inspiration</b></div>
+            <div class="card-body">
+                <h5 class="card-title">...</h5>
+                <p class="card-text">Fill out the <b>Wild Card</b> form to get started!</p>
+            </div>
+            {% endif %}
         </div>
     </div>
 </body>

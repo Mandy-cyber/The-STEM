@@ -24,7 +24,7 @@ def find_similar_people(wildcard, current_user):
 
     img_links = []
 
-    for x in range(10):
+    for x in range(20):
         try:
             time.sleep(0.5)
             img = browser.find_element(By.XPATH, f"""//*[@id="islrg"]/div[1]/div[{x}]/a[1]/div[1]/img""")

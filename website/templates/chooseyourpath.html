@@ -2,10 +2,12 @@
 {% block title %}Choose Your Path{% endblock %} 
 
 {% block content %} 
-<title>Choose Your Path!</title>
-<br><br>
+<h1 class="title">Choose Your Path!</h1>
+<br><br><br><br><br><br>
 <div class="button1">
-    <img id="downy" src="{{ url_for('static', filename='Science.png')}}"/>
+    <img id="downy" src="{{ url_for('static', filename='Science.png')}}"
+                    width = "300px"
+                    height = "200px"/>
     <div class="dropdown">
         <button class="dropbtn"></button>
         <div class="dropdown-content">
@@ -13,9 +15,12 @@
         </div>
       </div>
 </div>
-<br><br>
+<br>
+<br>
 <div class="button2">
-    <img id="downy" src="{{ url_for('static', filename='Technology.png')}}"/>
+    <img id="downy" src="{{ url_for('static', filename='Technology.png')}}"
+            width = "300px"
+            height = "200px"/>
     <div class="dropdown">
         <button class="dropbtn"></button>
         <div class="dropdown-content">
@@ -23,9 +28,12 @@
         </div>
       </div>
 </div>
-<br><br>
+<br>
+<br>
 <div class="button3">
-    <img id="downy" src="{{ url_for('static', filename='Engineering.png')}}"/>
+    <img id="downy" src="{{ url_for('static', filename='Engineering.png')}}"
+        width = "300px"
+        height = "200px"/>
     <div class="dropdown">
         <button class="dropbtn"></button>
         <div class="dropdown-content">
@@ -33,9 +41,12 @@
         </div>
       </div>
 </div>
-<br><br>
+<br>
+<br>
 <div class="button4">
-    <img id="downy" src="{{url_for('static', filename='Math.png')}}"/>
+    <img id="downy" src="{{url_for('static', filename='Math.png')}}"
+    width = "300px"
+    height = "200px"/>
     <div class="dropdown">
         <button class="dropbtn"></button>
         <div class="dropdown-content">
@@ -43,54 +54,5 @@
         </div>
       </div>
 </div>
-<div class="popup1">
-    <br><br>Science<br><br>Related Fields:<br><br>Natural Sciences (Biology, Chemistry, Physics)<br>Health Sciences<br>
-</div>
-<div class="popup2">
-        <br><br>Technology<br><br>Related Fields:<br><br>Biotechnology<br>Software Engineering<br>Cybersecurity<br>Data Science/AI<br>Game Development
-   </div>
-   <div class="popup3">
-        <br><br>Engineering<br><br>Related Fields:<br><br>Mechanical Engineering<br>Electrical Engineering<br>Biomedical Engineering<br>Chemical Engineering<br>Computer Engineering
-   </div>
-   <div class="popup4">
-        <br><br>Math<br><br>Related Fields:<br><br>Algebra<br>Geometry<br>Trigonometry<br>Calculus<br>Statistics
-   </div>
-   <script>
-   $(document).ready(function(){
-    $(".button1").on('mouseover', function(){
-        $(".popup1").show();
-        $(".popup2").hide();
-        $(".popup3").hide();
-        $(".popup4").hide();
-    });
-});
-
-
-$(document).ready(function(){
-    $(".button2").on('mouseover', function(){
-        $(".popup2").show();
-        $(".popup1").hide();
-        $(".popup3").hide();
-        $(".popup4").hide();
-});
-});
-
-$(document).ready(function(){
-    $(".button3").on('mouseover', function(){
-        $(".popup3").show();
-        $(".popup1").hide();
-        $(".popup2").hide();
-        $(".popup4").hide();
-});
-});
-
-$(document).ready(function(){
-    $(".button4").on('mouseover', function(){
-        $(".popup4").show();
-        $(".popup1").hide();
-        $(".popup2").hide();
-        $(".popup3").hide();
-});
-});
-</script>
+ 
 {% endblock %} 
