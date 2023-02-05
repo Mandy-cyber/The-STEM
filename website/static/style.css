@@ -61,6 +61,59 @@ a {
 }
 
 
+/* STYLING FOR PROFILE PAGE */
+/* --------------------------------------------------------------- */
+#profile-body {
+    background-image: url("https://cutewallpaper.org/cdn-cgi/mirage/2af0adefb1b7ebf6af3b94bf8b86378693ec8b55d34af727ac0cbb58dfd044f5/1280/28/desktop-wallpaper-cool-simple/150-simple-desktop-wallpapers-for-minimalist-lovers-icanbecreative.png");
+}
+
+#profile-container {
+    width: 100%;
+    align-items: center;
+    background-color: transparent;
+    display: inline-block;
+    position: absolute;
+    left: 3.5%;
+}
+
+#profile-info {
+    width: 31%;
+    position: absolute;
+    display: inline-block;
+    top: 2rem;
+    left: 5%;
+}
+
+#wildcard-q {
+    width: 31%;
+    position: absolute;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    left: 40%;
+    top: 2rem;
+}
+
+#wildcard-slideshow {
+    width: 100%;
+    position: absolute;
+    display: inline-block;
+    right: 0%;
+    top: 2rem;
+}
+
+#edu-submit {
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+}
+
+#edulevel-label {
+    font-style: italic;
+}
+
+
+
 /* STYLING CONTACT PAGE */
 /* --------------------------------------------------------------- */
 #contact-div {
@@ -379,7 +432,173 @@ img{
 /* STYLING FOR CHOOSE YOUR PATH PAGE */
 /* --------------------------------------------------------------- */
 
+.button1{
+    background-size: 300px 200px;
+    width: 300px;
+    height: 200px;
+    color: black;
+    text-align: center;
+    border-radius: 1rem;
+    letter-spacing: 2px;
+    font-family: 'Quicksand', sans-serif;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    text-decoration: none;
+    position: absolute;
+    left: 15%;
+    top: 16%;
+}
+    .button1>h2{
+        color:black;
+        text-align:center;
+    }
 
+    .button2{
+    background-size: 300px 200px;
+    width: 300px;
+    height: 200px;
+    color: black;
+    text-align: center;
+    border-radius: 1rem;
+    letter-spacing: 2px;
+    font-family: 'Quicksand', sans-serif;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    position: absolute;
+    left: 65%;
+    top: 16%;
+}
+    .button2>h2{
+        color:black;
+        text-align:center;
+    }
+    .button3{
+    background-size: 300px 200px;
+    width: 300px;
+    height: 200px;
+    color: black;
+    text-align: center;
+    border-radius: 1rem;
+    letter-spacing: 2px;
+    font-family: 'Quicksand', sans-serif;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    position: absolute;
+    left: 15%;
+    bottom: 5%;
+    
+}
+    .button3>h2{
+        color:black;
+        text-align:center;
+    }
+
+    .button4{
+    background-size: 300px 200px;
+    width: 300px;
+    height: 200px;
+    color: black;
+    text-align: center;
+    border-radius: 1rem;
+    letter-spacing: 2px;
+    font-family: 'Quicksand', sans-serif;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    position: absolute;
+    left: 65%;
+    bottom: 5%;
+}
+    .button4>h2{
+        color: black;
+        text-align:center;
+    }
+    .popup1{
+        border:5px solid #000;
+        background:white;
+        padding:25px;
+        height:300px;
+        width:20%;
+        cursor:pointer;
+        position:fixed;
+        top: 1%;
+        left: 250px;
+        display:none;
+    }
+
+    .popup2{
+        border:5px solid #000;
+        background:white;
+        padding:25px;
+        height:300px;
+        width:20%;
+        cursor:pointer;
+        position:fixed;
+        top: 1%;
+        right: 250px;
+        display:none;
+    }
+
+    .popup3{
+        border:5px solid #000;
+        background:white;
+        padding:25px;
+        height:300px;
+        width:20%;
+        cursor:pointer;
+        position:fixed;
+        top: 1%;
+        right: 250px;
+        display:none;
+    }
+
+    .popup4{
+        border:5px solid #000;
+        background:white;
+        padding:25px;
+        height:300px;
+        width:20%;
+        cursor:pointer;
+        position:fixed;
+        top: 1%;
+        right: 250px;
+        display:none;
+    }
+
+    /* Dropdown Button */
+.dropbtn {
+    background-color:#d5ff80;
+    width: 13rem;
+    position: relative;
+    height: 2rem;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #d5ff80;}
 
 /* STYLING FOR RESOURCES PAGE */
 /* --------------------------------------------------------------- */
@@ -411,138 +630,41 @@ img{
     background-color: pink;
 } */
 
-#subtitle{
-    text-align: left;
-    color:#d5ff80;
-    font-size:300%;
-    opacity: 1;
-    text-shadow: 2px 2px black;
-    font-family: 'Life Savers', cursive;;
-    font-weight: bold;
-
+#resource-edu-submit{
+    font-size: 1rem;
+    background-color: black;
+    color: white; 
 }
-.arrow{
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-}
-.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
-
-.category1{
-    float: left;
-    overflow:hidden;
-
-}
-.category1,.categories1{
-    cursor:pointer;
-    font-size: 35px;
-    border:none;
-    color:white;
-    padding: 14px, 16px;
-    background-color: inherit;
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    align-self: left;
+#resource-opp-submit {
+    font-size: 1rem;
+    background-color: black;
+    color: white;
 }
 
+#educational-resource-category {
+    font-style: italic;
+}
 
-.category1:hover, .categories1, .categories1:focus{
-    background-color: blue;
+#opportuntity-resource-category{
+    font-style: italic;
 }
-.educational-categories {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width:160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
 
+.form-control {
+    width: 100%;
+    padding: auto;
+    background-color: #7496df;
 }
-.educational-categories a{
-    float:none;
-    color:black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display:block;
-    text-align: left;
 
-}
-.educational-categories a:hover{
-    background-color: #ddd;
-}
-.show{
-    display:block;
-}
-.category2{
-    float: left;
-    overflow:hidden;
-}
-.category2, .categories2{
-    cursor:pointer;
-    font-size: 35px;
-    border:none;
-    color:white;
-    padding: 14px, 16px;
-    background-color: inherit;
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    align-self: left;
-}
-.category2:hover, .categories2, .categories2:focus{
-    background-color: blue;
-}
-.opportunity-categories {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width:160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+#filterform{
+    width: 23%;
+    align-items: center;
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    border-radius: 0.5rem;
+    position: relative;
+    left: 38.5%;
+    margin-top: 80px;
 
-}
-.opportunity-categories a{
-    float:none;
-    color:black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display:block;
-    text-align: left;
-
-}
-.show2{
-    display:block;
-}
-.opportunity-categories a:hover{
-    background-color: #ddd;
-}
-.filter{
-    float: left;
-    overflow:hidden;
-}
-.filter, .stem-filter{
-    cursor:pointer;
-    font-size: 16px;
-    border:none;
-    color:white;
-    padding: 14px, 16px;
-    background-color: inherit;
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    align-self: left;
-}
-.stem-categories a{
-    float:none;
-    color:black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display:block;
-    text-align: left;
-}
-.stem-categories a:hover{
-    background-color: #ddd;
 
 }

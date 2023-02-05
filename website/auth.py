@@ -1,6 +1,6 @@
 import re
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from .models import User, Messages, MailingList, Resource
+from .models import User, Messages, MailingList, Resource, SimilarPeople
 from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
@@ -119,6 +119,7 @@ def sign_up():
         else:
             # add user to database
             new_user = User(fullName=fullName, 
+                            username=username,
                             email=email, 
                             # hash and salt password before adding it to the database
                             password=generate_password_hash(password1,method='sha256', salt_length=8))

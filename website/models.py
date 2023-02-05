@@ -11,6 +11,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(16))
     eduLevel = db.Column(db.String(128)) #education level
     wildFactor = db.Column(db.String(32)) #some chosen identity (e.g queer)
+    similar_people = db.relationship('SimilarPeople')
 
 
 class Messages(db.Model):
@@ -32,3 +33,9 @@ class Resource(db.Model):
     res_link = db.Column(db.String(1024))
     res_summary = db.Column(db.String(1024))
     res_type = db.Column(db.String(64))
+
+
+class SimilarPeople(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    lnk = db.Column(db.String())

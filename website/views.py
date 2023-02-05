@@ -1,9 +1,14 @@
 import re
+import base64
+import io
+import urllib.request
 from flask import Blueprint, jsonify, render_template, flash, request, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from .models import User, Messages, MailingList, Resource
+from PIL import Image
+from .models import User, Messages, MailingList, Resource, SimilarPeople
 from . import db
 from .findres import find_resources
+from .wildcard import find_similar_people
 
 views = Blueprint('views', __name__) 
 
@@ -83,7 +88,52 @@ def choose_your_path():
 
 @views.route('/resources')
 def resources():
+    # TODO allow user to press button to query new results and reshuffle resources
     # find_resources()
     resources = Resource.query.all()
     return render_template("resources.html", user=current_user, resources=resources)
 
+
+#-------------------------------------------------------------------------#
+# PROFILE PAGE
+
+@views.route('/profile', methods=['GET', 'POST'])
+@login_required
+def profile():
+    if request.method == 'POST':
+        # get info from forms
+        wildcard = request.form.get('wildcard')
+        edulevel = request.form.get('edulevel')
+
+        if wildcard != None:
+            # checking validity
+            if len(wildcard) < 4:
+                flash("Hmm, that's a bit too short. Try another word!", category='info')
+            else:
+                flash("Wildcard noted...", category='success')
+                current_user.wildFactor = wildcard
+                db.session.commit()
+                img_links = find_similar_people(wildcard=wildcard, current_user=current_user)
+                ppl = SimilarPeople.query.filter_by(user_id=current_user.id).all()
+                links = []
+                for person in ppl:
+                    links.append(person.lnk)
+                return render_template("profile.html", user=current_user, links=links)
+        else:
+            if edulevel == None:
+                flash("Please provide information before pressing submit <3", category='error')
+            else:
+                flash("Education level updated successfully.", category='success')
+                current_user.eduLevel = str(edulevel)
+                db.session.commit()
+                return redirect(url_for('views.resources'))
+            
+    ppl = SimilarPeople.query.filter_by(user_id=current_user.id).all()
+    links = []
+    for person in ppl:
+        lnk = person.lnk
+
+
+    # user_info = User.query.filter_by(id=current_user.id).first()
+    # print(user_info.eduLevel)
+    return render_template("profile.html", user=current_user, links=links)

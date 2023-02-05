@@ -1,24 +1,96 @@
 {% extends "base.html" %}
-{% block title %} Choose Your Path  {% endblock %} 
+{% block title %}Choose Your Path{% endblock %} 
 
 {% block content %} 
-#imageComps {
-    height: 200px;
-    width: 200px;
-}
-
-<br>
-<h1 class="title"> Choose Your Path!</h1>
+<title>Choose Your Path!</title>
 <br><br>
-
-<div class="btn-group">
-    <button type="submit" id="imageComps" src="{{url_for('static', filename = 'Science.jpg')}}" class="page_links_left"> </button>
-    <button type="submit" id="imageComps" src="{{url_for('static', filename = 'Technology.jpg')}}" class="page_links_rightt"></button>
+<div class="button1">
+    <img id="downy" src="{{ url_for('static', filename='Science.png')}}"/>
+    <div class="dropdown">
+        <button class="dropbtn"></button>
+        <div class="dropdown-content">
+          <a href="#">Natural Sciences (Biology, Chemistry, Physics)</a><a href="#">Health Sciences</a>
+        </div>
+      </div>
 </div>
 <br><br>
-<div class="btn-group">
-    <button type="submit" id="imageComps" src="{{url_for('static', filename = 'Engineering.jpg')}}" class="page_links_left"> </button>
-    <button type="submit" id="imageComps" src="{{url_for('static', filename = 'Math.jpg')}}" class="page_links_rightt"></button>
+<div class="button2">
+    <img id="downy" src="{{ url_for('static', filename='Technology.png')}}"/>
+    <div class="dropdown">
+        <button class="dropbtn"></button>
+        <div class="dropdown-content">
+            <a href="#">Biotechnology</a><a href="#">Software Engineering</a><a href="#">Cybersecurity</a><a href="#">Data Science/AI</a><a href="#">Game Development</a>
+        </div>
+      </div>
 </div>
+<br><br>
+<div class="button3">
+    <img id="downy" src="{{ url_for('static', filename='Engineering.png')}}"/>
+    <div class="dropdown">
+        <button class="dropbtn"></button>
+        <div class="dropdown-content">
+            <a href="#">Mechanical Engineering</a><a href="#">Electrical Engineering</a><a href="#">Biomedical Engineering</a><a href="#">Chemical Engineering</a><a href="#">Computer Engineering</a>
+        </div>
+      </div>
+</div>
+<br><br>
+<div class="button4">
+    <img id="downy" src="{{url_for('static', filename='Math.png')}}"/>
+    <div class="dropdown">
+        <button class="dropbtn"></button>
+        <div class="dropdown-content">
+          <a href="#">Algebra</a><a href="#">Geometry</a><a href="#">Trigonometry</a><a href="#">Calculus</a><a href="#">Statistics</a>
+        </div>
+      </div>
+</div>
+<div class="popup1">
+    <br><br>Science<br><br>Related Fields:<br><br>Natural Sciences (Biology, Chemistry, Physics)<br>Health Sciences<br>
+</div>
+<div class="popup2">
+        <br><br>Technology<br><br>Related Fields:<br><br>Biotechnology<br>Software Engineering<br>Cybersecurity<br>Data Science/AI<br>Game Development
+   </div>
+   <div class="popup3">
+        <br><br>Engineering<br><br>Related Fields:<br><br>Mechanical Engineering<br>Electrical Engineering<br>Biomedical Engineering<br>Chemical Engineering<br>Computer Engineering
+   </div>
+   <div class="popup4">
+        <br><br>Math<br><br>Related Fields:<br><br>Algebra<br>Geometry<br>Trigonometry<br>Calculus<br>Statistics
+   </div>
+   <script>
+   $(document).ready(function(){
+    $(".button1").on('mouseover', function(){
+        $(".popup1").show();
+        $(".popup2").hide();
+        $(".popup3").hide();
+        $(".popup4").hide();
+    });
+});
 
+
+$(document).ready(function(){
+    $(".button2").on('mouseover', function(){
+        $(".popup2").show();
+        $(".popup1").hide();
+        $(".popup3").hide();
+        $(".popup4").hide();
+});
+});
+
+$(document).ready(function(){
+    $(".button3").on('mouseover', function(){
+        $(".popup3").show();
+        $(".popup1").hide();
+        $(".popup2").hide();
+        $(".popup4").hide();
+});
+});
+
+$(document).ready(function(){
+    $(".button4").on('mouseover', function(){
+        $(".popup4").show();
+        $(".popup1").hide();
+        $(".popup2").hide();
+        $(".popup3").hide();
+});
+});
+</script>
 {% endblock %} 
