@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %} Your Profile {% endblock %} 
+
+<!-- TODO make profile page with wildcard and edulevel, and display the rest of the user's info -->
+
+{% block content %} 
+<br>
+<h1 class="title" style="color: white;">Hey there,</h1>
+<body id="profile-body">
+    <div id="profile-container" class="container">
+        <!-- PROFILE INFO -->
+        <div id="profile-info" class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-header"><b>Your Info</b></div>
+            <div class="card-body">
+            <h5 class="card-title">{{ user.username }}</h5>
+            <p class="card-text"><b>Name:</b> {{ user.fullName }} <br><b>Email:</b> {{ user.email }}
+            {% if user.wildFactor is not none and user.wildFactor|length %}
+                <br>
+                <b>Wild Card:</b> {{ user.wildFactor }}
+            {% else %}
+            {% endif %}
+            {% if user.eduLevel is not none %}
+                <br>
+                <b>Education:</b> {{ user.eduLevel }}
+            {% else %}
+                <form method="POST">
+                    <div id="edulevel-div" class="form-group">
+                        <br>
+                        <label for="edulevel" id="edulevel-label">Current Education Level</label>
+                        <select name="edulevel" id="edulevel">
+                            <option value="Highschool Student">High School</option>
+                            <option value="Undergraduate Student">Undergraduate</option>
+                            <option value="Graduate Student">Graduate</option>
+                            <option value="Doctorate Candidate">Doctorate</option>
+                        </select>
+                        <input type="submit" name="edu-submit" id="edu-submit"/>
+                    </div>
+                </form>
+            {% endif %}
+            </p>
+            <br>
+            </div>
+        </div>
+
+
+        
+        <!-- WILDCARD QUESTION -->
+        <div id="wildcard-q" class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-header"><b>Wild Card</b></div>
+            <br>
+            <h5 class="card-title" style="padding-left: 1rem; padding-right: 1rem;">What's <b>one</b> word to describe your identity?</h5>
+            {% if user.wildFactor is not none and user.wildFactor|length %}
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 5vw; padding-left: 5rem;">{{ user.wildFactor }}</h2> 
+            <br>
+            {% else %}
+            <p class="card-text"></p>
+                <!-- CHOOSE A WILD CARD FORM -->
+                <form method="POST">
+                    <div id="wildcard-div" class="form-group" style="padding: 1rem;">
+                        <br>
+                        <input 
+                            type="text"
+                            class="form-control"
+                            style="background-color: white;"
+                            id="wildcard"
+                            name="wildcard"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" 
+                            style="background-color: #7286D3; 
+                                    color: white; position:relative;
+                                    width: 10vw; font-family: 'Quicksand', sans-serif;
+                                    font-weight: bold; margin: 1rem; left: 20%; top: -1.5rem;">
+                        SUBMIT
+                    </button>
+                </form>
+            {% endif %}
+        </div>
+
+
+        <!-- SLIDESHOW OF SIMILAR PEOPLE -->
+        <div id="wildcard-slideshow" class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-header"><b>Inspiration</b></div>
+            <div class="card-body">
+                <h5 class="card-title">Shared Identity</h5>
+                <p class="card-text">Other women in STEM who share your same identity:</p>
+                <div class="container">
+                    {% for link in links %}
+                        <div class="slideshow">
+                            <img class="slidepics" src="{{}}"/>
+                            <!-- https://www.zocalopublicsquare.org/wp-content/uploads/2021/08/lgbtq-stem-science-discrimination-sexual-orientation.jpg -->
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %} 
