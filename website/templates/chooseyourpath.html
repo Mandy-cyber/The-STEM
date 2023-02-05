@@ -2,3 +2,23 @@
 {% block title %} Choose Your Path  {% endblock %} 
 
 {% block content %} 
+#imageComps {
+    height: 200px;
+    width: 200px;
+}
+
+<br>
+<h1 class="title"> Choose Your Path!</h1>
+<br><br>
+
+<div class="btn-group">
+    <button type="submit" id="imageComps" src="{{url_for('static', filename = 'Science.jpg')}}" class="page_links_left"> </button>
+    <button type="submit" id="imageComps" src="{{url_for('static', filename = 'Technology.jpg')}}" class="page_links_rightt"></button>
+</div>
+<br><br>
+<div class="btn-group">
+    <button type="submit" id="imageComps" src="{{url_for('static', filename = 'Engineering.jpg')}}" class="page_links_left"> </button>
+    <button type="submit" id="imageComps" src="{{url_for('static', filename = 'Math.jpg')}}" class="page_links_rightt"></button>
+</div>
+
+{% endblock %} 

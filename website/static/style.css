@@ -2,7 +2,7 @@
 /* --------------------------------------------------------------- */
 body{
     background-color:bisque ;
-    background-image: url("https://i.pinimg.com/474x/dd/b3/1d/ddb31d64430c6c74995e475d97891bbf.jpg");
+    background-image: url("https://img.thrfun.com/img/141/314/seedling_x2.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -96,14 +96,14 @@ a {
 /* --------------------------------------------------------------- */
 .page_links_left{
     background-color:#d5ff80;
-    width: 15rem;
+    width: 13rem;
     color: black;
     text-align: center;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     letter-spacing: 2px;
     font-family: 'Quicksand', sans-serif;
-    padding-top: 0.75vw;
-    padding-bottom: 0.75vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     text-decoration: none;
     position: relative;
     left: 25%;
@@ -111,14 +111,14 @@ a {
 
 .page_links_right{
     background-color:#d5ff80;
-    width: 15rem;
+    width: 13rem;
     margin: 2%;
     color: black;
     text-align: center;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     letter-spacing: 2px;
-    padding-top: 0.75vw;
-    padding-bottom: 0.75vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     font-family: 'Quicksand', sans-serif;
     display: grid;
     position: relative;
@@ -383,6 +383,34 @@ img{
 
 /* STYLING FOR RESOURCES PAGE */
 /* --------------------------------------------------------------- */
+
+#resources-container {
+    display: inline;
+    width: 80%;
+
+}
+
+#list-of-resources ul {
+    margin: 5.5rem;
+    margin-top: 1.75rem;
+    padding: 0;
+    background-color: transparent;
+    display: inline-block;
+    position: relative;
+    left: 10%;
+}
+
+#list-of-resources ul li {
+    display:inline-block;
+    vertical-align:top;
+    width:31%;
+    background-color: transparent;
+}
+
+/* .indiv-res-div {
+    background-color: pink;
+} */
+
 #subtitle{
     text-align: left;
     color:#d5ff80;

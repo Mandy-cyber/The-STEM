@@ -3,6 +3,7 @@ from flask import Blueprint, jsonify, render_template, flash, request, jsonify, 
 from flask_login import login_required, current_user
 from .models import User, Messages, MailingList, Resource
 from . import db
+from .findres import find_resources
 
 views = Blueprint('views', __name__) 
 
@@ -82,5 +83,7 @@ def choose_your_path():
 
 @views.route('/resources')
 def resources():
-    return render_template("resources.html", user=current_user)
+    # find_resources()
+    resources = Resource.query.all()
+    return render_template("resources.html", user=current_user, resources=resources)
 

@@ -1,15 +1,40 @@
 {% extends "base.html" %}
-{% block title %} Resources  {% endblock %} 
+{% block title %} Resources {% endblock %} 
 
-{% block content %} 
-<br><br>
+{% block content %}
+<br>
+<h1 class="title">Resources</h1>
+
+<div id="resources-container">
+    <div id="list-of-resources">
+        <ul class="list-group list-group-flush">
+        {% for resource in resources %}
+            <li class="list-group-item">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ resource.res_name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ resource.res_type }}</h6>
+                    <p class="card-text">{{ resource.res_summary }}</p>
+                    <!-- TODO figure out how to add the link to the place -->
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
+
+
+<!-- <br><br>
 <h2 id="subtitle">Categories</h2>
 <div class="category1">
     <button class="categories1" onclick="myFunction()">
         Educational <i class="arrow down"></i>
     </button>
     <div class="educational-categories" id="myDropdown1">
-        <!--Enter information for Educational Resources-->
+        Enter information for Educational Resources
         <a href=""> Subject Competitions </a>
         <a href="">Resume Building  </a>
         <a href="">Homework Help </a>
@@ -22,7 +47,7 @@
         Opportunities <i class="arrow down"></i>
     </button>
     <div class="opportunity-categories" id="myDropdown2">
-        <!--Enter information for Opportunity Resources-->
+        Enter information for Opportunity Resources
         <a href="">Internships</a>
         <a href="">Research</a>
         <a href="">Jobs</a>
@@ -33,16 +58,16 @@
         Filter <i class="arrow down"></i>
     </button>
     <div class="stem-categories" id="myDropdown3">
-        <!--Enter information for STEM Resources-->
+        Enter information for STEM Resources
         <a href=""> Science</a>
         <a href=""> Technology</a>
         <a href=""> Engineering</a>
         <a href=""> Math</a>
         <a href=""> Select All</a>
     </div>
-</div>
+</div> -->
 
-<script>
+<!-- <script>
     /* When the user clicks on the button, 
     toggle between hiding and showing the dropdown content */
     function myFunction() {
@@ -84,7 +109,5 @@
         }
 
     }
-    </script>
-
-{% endblock %} 
+    </script> -->
    
