@@ -9,6 +9,7 @@ body{
     background-size: cover;
     overflow-x: hidden;
 }
+
 .title{
     text-align: center;
     color: #d5ff80;
@@ -18,6 +19,10 @@ body{
     text-shadow: 4px 4px black;
     font-family: 'Dancing Script', cursive;
     font-family: 'Life Savers', cursive;
+}
+
+a {
+    color: black;
 }
 
 
@@ -90,61 +95,54 @@ body{
 /* STYLING FOR HOME PAGE */
 /* --------------------------------------------------------------- */
 .page_links_left{
-
     background-color:#d5ff80;
+    width: 15rem;
     color: black;
     text-align: center;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     letter-spacing: 2px;
     font-family: 'Quicksand', sans-serif;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-top: 0.75vw;
+    padding-bottom: 0.75vw;
     text-decoration: none;
     position: relative;
-    float: left;
-    clear: left;
+    left: 25%;
 }
 
 .page_links_right{
     background-color:#d5ff80;
+    width: 15rem;
+    margin: 2%;
     color: black;
     text-align: center;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     letter-spacing: 2px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-top: 0.75vw;
+    padding-bottom: 0.75vw;
     font-family: 'Quicksand', sans-serif;
-    position:relative;
-    float: right;
-    clear: right;
+    display: grid;
+    position: relative;
+    right: -50%;
 }
 
-.clearfix {
-    overflow: auto;
-}
-
-#about{
-    padding-left: 60px;
-    padding-right: 60px;
+#about {
+    margin: 0%;
 }
 
 #join{
-    padding-left: 70px;
-    padding-right: 70px;
+    margin: 0%;
 }
 
 #chooseyourpath {
-    padding-left: 30px;
-    padding-right: 30px;
+    margin: 0%;
 }
 
 #contactus{
-    padding-left: 60px;
-    padding-right: 60px;
+    margin: 0%;
+}
+
+#resources {
+    margin: 0%;
 }
 
 /* The Modal (background) */
@@ -152,8 +150,8 @@ body{
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  left: 40%;
-  top: 20%;
+  left: 37%;
+  top: 30%;
   width: 25%;
   overflow: auto; 
   justify-content: center;
@@ -367,7 +365,7 @@ img{
         float:right;
       }
       .wrapper, #histrypr{
-        loat:right;
+        float:right;
         text-align:righ
       }
       .captionbox{
@@ -384,7 +382,8 @@ img{
 
 
 /* STYLING FOR RESOURCES PAGE */
-/* --------------------------------------------------------------- */#subtitle{
+/* --------------------------------------------------------------- */
+#subtitle{
     text-align: left;
     color:#d5ff80;
     font-size:300%;
@@ -518,4 +517,4 @@ img{
 .stem-categories a:hover{
     background-color: #ddd;
 
-}\
+}

@@ -24,3 +24,10 @@ class MailingList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     mailer_name = db.Column(db.String(64))
     email = db.Column(db.String(128), unique=True)
+
+class Resource(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    res_name = db.Column(db.String(256))
+    res_link = db.Column(db.String(1024))
+    res_summary = db.Column(db.String(1024))
+    res_type = db.Column(db.String(64))

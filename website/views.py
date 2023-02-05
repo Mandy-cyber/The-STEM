@@ -1,7 +1,7 @@
 import re
 from flask import Blueprint, jsonify, render_template, flash, request, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from .models import User, Messages, MailingList
+from .models import User, Messages, MailingList, Resource
 from . import db
 
 views = Blueprint('views', __name__) 
